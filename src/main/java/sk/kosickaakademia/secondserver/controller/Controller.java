@@ -7,7 +7,12 @@ import java.util.Date;
 @RestController
 public class Controller {
 
-    @RequestMapping(path = "/hello")
+    @RequestMapping(path = "/", method = RequestMethod.GET)
+    public String getRoot(){
+        return "<h1>I am root</h1>";
+    }
+
+    @GetMapping(path = "/hello")
     public String getHello(){
         return "<h1>Hi. How are you? Do you like a Java?</h1>";
     }
@@ -35,6 +40,10 @@ public class Controller {
     public String getHiWithName(@PathVariable String username){
         return "<h2>Hi "+username+". What are you doing?</h2>";
     }
+    @RequestMapping(path = "/hi/calc")
+    public String getCalcValue(@PathVariable String username){
 
+        return "";
+    }
 
 }
